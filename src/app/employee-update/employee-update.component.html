@@ -1,0 +1,25 @@
+<div *ngIf="employee">
+    <h2>Edit {{ employee.firstName }} {{ employee.lastName }}</h2>
+    <form (ngSubmit)="save()">
+      <label for="firstName">First Name</label>
+      <input id="firstName" [(ngModel)]="employee.firstName" name="firstName">
+  
+      <label for="lastName">Last Name</label>
+      <input id="lastName" [(ngModel)]="employee.lastName" name="lastName">
+  
+      <label for="email">Email</label>
+      <input id="email" [(ngModel)]="employee.email" name="email">
+  
+      <label for="gender">Gender</label>
+      <input id="gender" [(ngModel)]="employee.gender" name="gender">
+  
+      <label for="status">Status</label>
+      <select id="status" [(ngModel)]="employee.status" name="status">
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+      </select>
+  
+      <button type="submit">Save</button>
+    </form>
+  </div>
+  

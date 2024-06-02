@@ -1,0 +1,26 @@
+<table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.firstName }} {{ employee.lastName }}</td>
+        <td>{{ employee.email }}</td>
+        <td [ngClass]="{'active': employee.status === 'Active', 'inactive': employee.status === 'Inactive'}">{{  employee.status }}</td>
+        <td>
+          <button (click)="viewEmployee(employee.id)">View</button>
+          <button (click)="updateEmployee(employee.id)">Update</button>
+          <button (click)="deleteEmployee(employee.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
